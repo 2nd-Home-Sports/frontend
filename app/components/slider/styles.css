@@ -1,0 +1,10 @@
+.slick-slide div {
+   width: 100%;
+   transform: scale(1);
+}
+
+.slick-slide.slick-center div {
+    opacity:   100%;
+    transform: scale(1.05);
+
+}
