@@ -18,9 +18,9 @@ import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { MdRestartAlt } from "react-icons/md";
 import { getTeamAreas } from "@/app/libs/api/strapi/team_area";
 
-interface IFilterModal {}
+interface IFilterModal { }
 
-const FilterModal: React.FC<IFilterModal> = ({}) => {
+const FilterModal: React.FC<IFilterModal> = ({ }) => {
   const [leagues, setLeagues] = useState<LeagueType[]>([]);
   const [teams, setTeams] = useState<TeamType[]>([]);
   const [cities, setCities] = useState<CityType[]>([]);
@@ -136,7 +136,7 @@ const FilterModal: React.FC<IFilterModal> = ({}) => {
 
   if (filterModal.step == STEPS.TEAM) {
     stepContent = (
-      <div className="grid grid-cols-5 gap-1">
+      <div className="grid grid-cols-4 gap-1">
         {teams.map((_team, index) => (
           <button
             key={index}
@@ -191,9 +191,8 @@ const FilterModal: React.FC<IFilterModal> = ({}) => {
     <>
       {filterModal.isOpen && (
         <div
-          className={`absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-black ${
-            filterModal.step > 1 ? "bg-opacity-70" : "bg-opacity-70"
-          }`}
+          className={`absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-black ${filterModal.step > 1 ? "bg-opacity-70" : "bg-opacity-70"
+            }`}
         >
           {stepContent}
 
